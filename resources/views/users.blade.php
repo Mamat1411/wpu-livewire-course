@@ -17,5 +17,6 @@
 
         {{-- using single component --}}
         <livewire:users />
+        <script src="{{ asset('js/flowbite.min.js') }}"></script>
     </body>
 </html>
