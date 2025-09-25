@@ -11,12 +11,18 @@ class Users extends Component
     // public data
     // public $title = 'Users Page';
 
+    public $name;
+    public $email;
+    public $password;
+
     public function createUser() {
         User::create([
-            'name' => fake()->name(),
-            'email' => fake()->email(),
-            'password' => Hash::make('password')
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => Hash::make($this->password)
         ]);
+
+        $this->reset();
     }
 
     public function render()
