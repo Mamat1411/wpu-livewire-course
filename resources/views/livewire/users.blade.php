@@ -166,11 +166,13 @@
                     </div>
                     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end self-center">
                         <p class="mt-1 text-xs/5 text-gray-500">
-                            Joined 1 hour ago
+                            Joined {{ $user->created_at->diffForHumans() }}
                         </p>
                     </div>
                 </li>
             @endforeach
         </ul>
+
+        {{ $users->links() }}
     </div>
 </div>
