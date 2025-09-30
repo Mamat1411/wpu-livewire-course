@@ -13,6 +13,8 @@ class Users extends Component
 {
     use WithFileUploads, WithPagination;
 
+    public $query = '';
+
     // public data
     // public $title = 'Users Page';
 
@@ -62,12 +64,20 @@ class Users extends Component
         session()->flash('success', 'User Succesfully Added');
     }
 
+    public function updatedQuery() {
+        $this->resetPage();
+    }
+
+    public function search() {
+        $this->resetPage();
+    }
+
     public function render()
     {
         return view('livewire.users', [
             // function scoped data
             'title' => 'Users Page',
-            'users' => User::latest()->paginate(6)
+            'users' => User::latest()->where('name', 'like', "%{$this->query}%")->paginate(6)
         ]);
     }
 }
