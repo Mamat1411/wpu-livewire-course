@@ -16,7 +16,12 @@
         {{-- @livewire('users') --}}
 
         {{-- using single component --}}
-        <livewire:users />
+        {{-- <livewire:users /> --}}
+
+        <div class="flex justify-center gap-10">
+            <livewire:user-register-form>
+            <livewire:users-list>
+        </div>
         <script src="{{ asset('js/flowbite.min.js') }}"></script>
     </body>
 </html>
