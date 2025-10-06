@@ -14,16 +14,24 @@ class UsersList extends Component
     public $query = '';
 
     #[On('user-created')]
-    public function updatedQuery() {
+    public function updatedQuery()
+    {
         $this->resetPage();
     }
 
-    public function search() {
+    public function search()
+    {
         $this->resetPage();
+    }
+
+    public function placeholder()
+    {
+        return view('livewire.placeholders.skeleton');
     }
 
     public function render()
     {
+        sleep(1);
         return view('livewire.users-list', [
             'title' => 'Users Page',
             'users' => User::latest()->where('name', 'like', "%{$this->query}%")->paginate(6)

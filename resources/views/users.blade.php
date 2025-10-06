@@ -20,7 +20,7 @@
 
         <div class="flex justify-center gap-10">
             <livewire:user-register-form>
-            <livewire:users-list>
+            <livewire:users-list lazy>
         </div>
         <script src="{{ asset('js/flowbite.min.js') }}"></script>
     </body>
