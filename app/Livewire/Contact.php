@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\ContactForm;
-use App\Models\Contact as ModelsContact;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
