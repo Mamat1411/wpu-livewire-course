@@ -12,7 +12,6 @@ class UserRegisterForm extends Component
 {
     use WithFileUploads;
 
-
     #[Validate(['required', 'min:3'])]
     public $name = '';
 
